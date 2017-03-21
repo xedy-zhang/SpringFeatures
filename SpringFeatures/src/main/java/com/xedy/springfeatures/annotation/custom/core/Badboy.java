@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.xedy.springfeatures.annotation.custom;
+package com.xedy.springfeatures.annotation.custom.core;
 
 import static java.lang.annotation.ElementType.FIELD;
 

@@ -1,9 +1,13 @@
 /**
  * 
  */
-package com.xedy.springfeatures.annotation.custom;
+package com.xedy.springfeatures.annotation.custom.app;
 
 import java.io.UnsupportedEncodingException;
+
+import org.springframework.stereotype.Component;
+
+import com.xedy.springfeatures.annotation.custom.core.Badboy;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -12,6 +16,7 @@ import lombok.extern.slf4j.Slf4j;
  *
  */
 @Slf4j
+@Component
 public class TheHackerTeam {
 	@Badboy("youAreSmartGuy")
 	EncapsulatedEvilClass evilClass;

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.xedy.springfeatures.annotation.custom;
+package com.xedy.springfeatures.annotation.custom.app;
 
 /**
  * @author xedy_zhang@126.com
