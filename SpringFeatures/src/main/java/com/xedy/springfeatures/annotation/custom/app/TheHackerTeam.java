@@ -19,12 +19,18 @@ import lombok.extern.slf4j.Slf4j;
 @Component
 public class TheHackerTeam {
 	@Badboy("youAreSmartGuy")
-	EncapsulatedEvilClass evilClass;
+	EncapsulatedEvilClass evilClass1;
+	
+	@Badboy("youAreBadGuy")
+	EncapsulatedEvilClass evilClass2;
 	
 	public void fakeGreeting(String fakeQuestion){
 		try {
-			String realMessage = new String(evilClass.doHack(fakeQuestion),"UTF-8");
-			log.debug(realMessage.toUpperCase());
+			String realMessage = new String(evilClass1.doHack(fakeQuestion),"UTF-8");
+			log.debug("fakeGreeting call EncapsulatedEvilClass , the result is : {}",realMessage.toUpperCase());
+			
+			realMessage = new String(evilClass2.doHack("evilClass2 "+fakeQuestion));
+			log.debug("fakeGreeting call EncapsulatedEvilClass , the result is : {}",realMessage.toUpperCase());
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 		}

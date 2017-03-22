@@ -11,17 +11,24 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * @author xedy_zhang@126.com
  *
  */
 @Component
+@Slf4j
 public class CustomAnnotationBeanFactoryPostProcessor implements BeanFactoryPostProcessor, ApplicationContextAware {
 
 	/* (non-Javadoc)
 	 * @see org.springframework.beans.factory.config.BeanFactoryPostProcessor#postProcessBeanFactory(org.springframework.beans.factory.config.ConfigurableListableBeanFactory)
 	 */
 	public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
+		for (String name : beanFactory.getBeanDefinitionNames()) {
+			log.debug("--------------- : {}",name);
+		}
+		log.debug("++++++++++++++++++++++++++++++++++++++++");
 		CustomAnnotationScanner customAnnotationScanner = new CustomAnnotationScanner((BeanDefinitionRegistry)beanFactory);
 		customAnnotationScanner.setResourceLoader(applicationContext);
 		customAnnotationScanner.scan("com.xedy.springfeatures.annotation.custom.app");
