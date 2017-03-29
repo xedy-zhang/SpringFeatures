@@ -22,7 +22,7 @@ public class AspectClassTest {
 	CalleeClass targetClass;
 	
 	@Test
-	public void testAfterReturning() {
+	public void testAround() {
 		Assert.assertNotNull(targetClass);
 		targetClass.hScan();
 		log.debug("test ok ...");
